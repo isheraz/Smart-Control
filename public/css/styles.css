@@ -1,0 +1,116 @@
+.resize-none {
+      resize: none;
+}
+
+.btn-add-device {
+      padding: 20px;
+      width: 100%;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 22px;
+}
+
+.sh-device {
+      border: 1px solid #a0a0a0;
+      padding: 20px 20px 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+      margin-bottom: 30px;
+}
+
+.sh-device .edit {
+      position: absolute;
+      right: 25px;
+      top: 5px;
+}
+
+.sh-device .delete {
+      position: absolute;
+      right: 50px;
+      top: 4px;
+}
+
+.sh-device small {
+      position: absolute;
+      right: 75px;
+      top: 8px;
+}
+
+.sh-device a.device-io {
+      color: #343a40;
+}
+
+.sh-device a.device-io:hover {
+      text-decoration: none;
+      color: #0056b3;
+}
+
+.sh-device p i {
+      display: block;
+      font-size: 20px;
+}
+
+.sh-device p span {
+      display: block;
+}
+
+.sh-device a.disabled {
+      pointer-events: none;
+      cursor: default;
+      opacity: 0.6;
+      color: gray;
+}
+
+.sh-device a.disabled:hover {
+      pointer-events: none;
+      cursor: default;
+      opacity: 0.6;
+      color: gray;
+}
+
+.sh-device .device-serial {
+      position: absolute;
+      left: 19px;
+      bottom: 30px;
+      color: #9a9a9a;
+      font-size: 10px;
+      font-weight: 600;
+}
+
+.device-history {
+      position: absolute;
+      font-size: small;
+      right: 22px;
+      bottom: 30px;
+}
+
+#location_icon, #node_icon {
+      font-family: 'FontAwesome', 'Raleway', monospace;
+      word-spacing: 30px;
+      letter-spacing: 1px;
+}
+
+.node {
+      border: 1px solid #888888;
+}
+
+.checkbox label .toggle, .checkbox-inline .toggle {
+      margin-left: 20px;
+      margin-right: 5px;
+      border: 1px solid #a0a0a0;
+}
+
+.toggle-handle {
+      background: #888888;
+}
+
+.show_node {
+      position: absolute;
+      top: 0;
+      left: 30px;
+}
+
+.delete_node {
+      float: right;
+      font-size: 22px;
+}
