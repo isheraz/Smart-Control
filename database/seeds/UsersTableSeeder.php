@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -22,7 +23,7 @@ class UsersTableSeeder extends Seeder
                 'id' => 1,
                 'name' => 'Sheraz Ahmed',
                 'email' => 'sherazahmdd@gmail.com',
-                'password' => '$2y$10$1CK1VpLAWmosKXeO6PmzmO8SOaS9HbKQ9LjHTfc3xOdEdxgOJnW0y',
+                'password' => Hash::make('asdf1234'),
                 'has_questions' => 0,
                 'remember_token' => NULL,
                 'created_at' => '2019-01-24 10:00:41',

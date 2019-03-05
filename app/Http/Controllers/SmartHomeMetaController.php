@@ -16,7 +16,7 @@ class SmartHomeMetaController extends Controller {
 	public function __construct() {
 		$this->middleware( 'auth',
 			[
-				'except' => []
+				'except' => [ 'update' ]
 			]
 		);
 	}
@@ -41,8 +41,8 @@ class SmartHomeMetaController extends Controller {
 	 */
 	public function store( Request $request ) {
 		$smart_home_id = $request->device_id;
-		$meta      = null;
-		$validator = Validator::make( $request->all(), [
+		$meta          = null;
+		$validator     = Validator::make( $request->all(), [
 			'key'       => [
 				Rule::unique( 'smart_home_metas', 'key' )
 				    ->where( function ( $query ) use ( $smart_home_id ) {
@@ -103,12 +103,33 @@ class SmartHomeMetaController extends Controller {
 	 * Update the specified resource in storage.
 	 *
 	 * @param  \Illuminate\Http\Request $request
-	 * @param  \App\SmartHomeMeta $smartHomeMeta
+	 * @param  \App\SmartHomeMeta $serial
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update( Request $request, SmartHomeMeta $smartHomeMeta ) {
-		//
+	public function update( Request $request, $serial ) {
+		$flag = false;
+		$device = SmartHome::where( 'serial', '=', $serial )->get()->first();
+		foreach ( $request->toArray() as $key => $requested ) {
+			$flag = false;
+			foreach ( $device->device_metas as $meta ) {
+				if ( $meta->key === $requested['key'] ) {
+					$meta->value = $requested['value'];
+					$meta->save();
+					$flag = true;
+				}
+			}
+		}
+		if($flag){
+			return response()->json([
+				"success"=>true,
+				"message"=>"Values Updated Successfully"
+			]);
+		}
+		return response()->json([
+			"error"=>true,
+			"message"=>"Values do not exist. keys are case sensitive"
+		]);
 	}
 	
 	/**
