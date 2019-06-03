@@ -63,3 +63,10 @@ Route::prefix('meta')->group(function () {
 	});*/
 	
 });
+
+Route::prefix('bluetooth')->group(function () {
+    Route::get('/', 'BluetoothDeviceController@index')->name('bt-group-list');
+    Route::get('/reset','BluetoothDeviceController@reset')->name('bt-reset-devices');
+    Route::get('/delete/{smartHomeMeta}','BluetoothDeviceController@destroy')->name('delete-bluetooth-device');
+    Route::post('/create','BluetoothDeviceController@store')->name('create-bluetooth-device');
+});
