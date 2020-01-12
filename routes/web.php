@@ -70,3 +70,10 @@ Route::prefix('bluetooth')->group(function () {
     Route::get('/delete/{smartHomeMeta}','BluetoothDeviceController@destroy')->name('delete-bluetooth-device');
     Route::post('/create','BluetoothDeviceController@store')->name('create-bluetooth-device');
 });
+
+// Graph Routes
+Route::prefix('graphs')->group(function(){
+   Route::get('/{graph}', 'ChartController@show')->name('show-graph');
+   Route::post('/{device}', 'ChartController@store')->name('store-graph');
+
+});

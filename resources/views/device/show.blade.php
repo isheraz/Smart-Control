@@ -12,7 +12,12 @@
                             Appliance</a>
                         <!-- Trigger the modal with a button -->
                         <button type="button" class="btn btn-info" data-toggle="modal"
-                                data-target="#new-attribute">Create New Attribute</button>
+                                data-target="#new-attribute">Create New Attribute
+                        </button>
+
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#new-chart">
+                            Create New Chart
+                        </button>
 
                         <!-- Modal -->
                         <div id="new-attribute" class="modal fade" role="dialog">
@@ -21,7 +26,8 @@
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <p class="mb-0 text-center">U can access these keys with the key name you define here</p>
+                                        <p class="mb-0 text-center">U can access these keys with the key name you define
+                                            here</p>
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     </div>
                                     <div class="modal-body">
@@ -30,12 +36,68 @@
                                                 <label for="key">Enter Key</label>
                                                 <input type="text" name="key" id="key" class="form-control">
                                             </div>
-                                           @csrf
+                                            @csrf
                                             <input type="hidden" name="device_id" value="{{$device->id}}">
 
                                             <div class="form-group">
                                                 <label for="value">Enter Value</label>
                                                 <input type="text" name="value" id="value" class="form-control">
+                                            </div>
+                                            <button type="submit" class="btn btn-outline-success">Save</button>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {{-- New Chart Toggle --}}
+                        <div id="new-chart" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <p class="mb-0 text-center">U can Push Data on the table using the <b>Title</b> you set</p>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{route('store-graph', $device->id)}}" method="post" id="graph-type">
+                                            <div class="form-group">
+                                                <label for="chart-title">Title</label>
+                                                <input type="text" name="chart_title" id="chart-title" class="form-control">
+                                            </div>
+                                            @csrf
+                                            <input type="hidden" name="device_id" value="{{$device->id}}">
+
+                                            <div class="form-group">
+                                                <label for="value">Select Chart Type</label>
+                                                <select name="chart_type" class="form-control">
+                                                    <option value="line">Line Chart</option>
+                                                    <option value="bar">Bar Chart</option>
+                                                    <option value="pie">Pie Chart</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="value">Select X-Axis Label</label>
+                                                <select name="chart_x_labels" class="form-control">
+                                                    <option value="months">Year (Jan - Dec)</option>
+                                                    <option value="100">1-100</option>
+                                                    <option value="auto-numeric">1 -~ Auto Increase</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group chart-y-axises">
+                                                <label for="chart-line">Add Y-Axis Labels(auto set to numeric value)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control">
+                                                    <button class="btn btn-outline-success btn_chart_y"><i class="fa fa-plus"></i></button>
+                                                </div>
+
+
                                             </div>
                                             <button type="submit" class="btn btn-outline-success">Save</button>
 
