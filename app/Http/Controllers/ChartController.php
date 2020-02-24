@@ -3,29 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Chart;
+use App\SmartHome;
 use Illuminate\Http\Request;
 
 class ChartController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -33,9 +15,19 @@ class ChartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($device_id, Request $request)
     {
-        dd($request);
+        if (!Chart::where('device_id', $device_id)->get()->first()) {
+            return response()->json(Chart::create([
+                'title' => $request->title,
+                'type' => /* $request->type or  */json_encode('line'),
+                'x_axis' =>/*  $request->x_axis or */ json_encode('timestamp'),
+                'y_axis' => json_encode($request->y_axis),
+                'device_id' => $device_id
+            ]));
+        }
+
+        return response()->json(['error' => 'chart for device already exists'], 401);
     }
 
     /**
@@ -44,20 +36,19 @@ class ChartController extends Controller
      * @param  \App\Chart  $chart
      * @return \Illuminate\Http\Response
      */
-    public function show(Chart $chart)
+    public function show(SmartHome $device)
     {
-
+        return $device->charts();
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display the specified resource.
      *
      * @param  \App\Chart  $chart
      * @return \Illuminate\Http\Response
      */
-    public function edit(Chart $chart)
+    public function showX(SmartHome $device)
     {
-        //
     }
 
     /**

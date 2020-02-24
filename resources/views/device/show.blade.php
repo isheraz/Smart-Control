@@ -66,17 +66,18 @@
                                     </div>
                                     <div class="modal-body">
                                         <form action="{{route('store-graph', $device->id)}}" method="post" id="graph-type">
+                                           
                                             <div class="form-group">
                                                 <label for="chart-title">Title</label>
-                                                <input type="text" name="chart_title" id="chart-title" class="form-control">
+                                                <input type="text" name="title" id="chart-title" class="form-control">
                                             </div>
                                             @csrf
                                             <input type="hidden" name="device_id" value="{{$device->id}}">
 
                                             <div class="form-group">
                                                 <label for="value">Select Chart Type</label>
-                                                <select name="chart_type" class="form-control">
-                                                    <option value="line">Line Chart</option>
+                                                <select name="type" disabled class="form-control">
+                                                    <option value="line" selected>Line Chart</option>
                                                     <option value="bar">Bar Chart</option>
                                                     <option value="pie">Pie Chart</option>
                                                 </select>
@@ -84,17 +85,17 @@
 
                                             <div class="form-group">
                                                 <label for="value">Select X-Axis Label</label>
-                                                <select name="chart_x_labels" class="form-control">
+                                                <select name="x_axis" disabled class="form-control">
+                                                    <option value="timestamp" selected>DateTime</option>
                                                     <option value="months">Year (Jan - Dec)</option>
                                                     <option value="100">1-100</option>
                                                     <option value="auto-numeric">1 -~ Auto Increase</option>
                                                 </select>
                                             </div>
                                             <div class="form-group chart-y-axises">
-                                                <label for="chart-line">Add Y-Axis Labels(auto set to numeric value)</label>
+                                                <label for="chart-line">Add Y-Axis Labels( numeric data only)</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control">
-                                                    <button class="btn btn-outline-success btn_chart_y"><i class="fa fa-plus"></i></button>
+                                                    <input type="text" name="y_axis" class="form-control">
                                                 </div>
 
 
