@@ -36,7 +36,6 @@ Route::group( [ 'middleware' => [ 'api' ] ], function () {
 	Route::post('bluetooth/group', 'BluetoothDeviceController@master');
 
 
-	Route::post('chart/{device}/x-value', 'ChartController@update');
-	Route::get('chart/{device}/x-value', 'ChartController@showX');
-	Route::get('chart/{device}', 'ChartController@show');
+	Route::post('chart/update/{device}', 'ChartController@update');
+	Route::post('chart/values/{device}', 'ChartController@showX');
 } );

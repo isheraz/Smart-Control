@@ -31,7 +31,7 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{route('device-attribute')}}" method="post">
+                                        <form action="{{ route('device-attribute') }}" method="post">
                                             <div class="form-group">
                                                 <label for="key">Enter Key</label>
                                                 <input type="text" name="key" id="key" class="form-control">
@@ -65,8 +65,7 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{route('store-graph', $device->id)}}" method="post" id="graph-type">
-                                           
+                                        <form action="{{ route('store-graph', $device->id) }}" method="post" id="graph-type">                                           
                                             <div class="form-group">
                                                 <label for="chart-title">Title</label>
                                                 <input type="text" name="title" id="chart-title" class="form-control">
@@ -101,7 +100,6 @@
 
                                             </div>
                                             <button type="submit" class="btn btn-outline-success">Save</button>
-
                                         </form>
                                     </div>
                                     <div class="modal-footer">

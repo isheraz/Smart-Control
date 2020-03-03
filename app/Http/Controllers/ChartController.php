@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Chart;
+use App\ChartData;
 use App\SmartHome;
+use DateTime;
 use Illuminate\Http\Request;
 
 class ChartController extends Controller
@@ -18,16 +20,17 @@ class ChartController extends Controller
     public function store($device_id, Request $request)
     {
         if (!Chart::where('device_id', $device_id)->get()->first()) {
-            return response()->json(Chart::create([
+            $chart = Chart::create([
                 'title' => $request->title,
-                'type' => /* $request->type or  */json_encode('line'),
-                'x_axis' =>/*  $request->x_axis or */ json_encode('timestamp'),
-                'y_axis' => json_encode($request->y_axis),
+                'type' => /* $request->type or  */ 'line',
+                'x_axis' =>/*  $request->x_axis or */ 'timestamp',
+                'y_axis' => $request->y_axis,
                 'device_id' => $device_id
-            ]));
+            ]);
+            return response()->json(['message' => 'chart for device created successfully'], 200);
         }
 
-        return response()->json(['error' => 'chart for device already exists'], 401);
+        return response()->json(['message' => 'chart for device already exists'], 401);
     }
 
     /**
@@ -47,8 +50,11 @@ class ChartController extends Controller
      * @param  \App\Chart  $chart
      * @return \Illuminate\Http\Response
      */
-    public function showX(SmartHome $device)
+    public function showX($device)
     {
+        $device = SmartHome::where('serial', $device)->first();
+        $chart = $device->chart()->with('chartValues')->first();
+        return response()->json($chart);
     }
 
     /**
@@ -58,9 +64,18 @@ class ChartController extends Controller
      * @param  \App\Chart  $chart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Chart $chart)
+    public function update(Request $request, $device)
     {
-        //
+        $device = SmartHome::where('serial', $device)->first();
+        $chart = $device->chart()->with('chartValues')->first();
+
+        $res = ChartData::insert([
+            'x' => new DateTime(now()),
+            'y' => $request->y,
+            'chart_id' => $chart->id
+        ]);
+
+        return response()->json(["value_added" => $res]);
     }
 
     /**

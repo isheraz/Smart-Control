@@ -35,7 +35,7 @@ $(document).ready(function () {
             dataType: "json",
             async: true,
             method: 'POST',
-            data: {node: node},
+            data: { node: node },
             success: function (response) {
                 Swal({
                     type: 'success',
@@ -59,7 +59,7 @@ function update_state(node) {
         dataType: "json",
         async: true,
         method: 'POST',
-        data: {node: node},
+        data: { node: node },
         success: function (response) {
             Swal({
                 type: 'success',
@@ -78,21 +78,36 @@ function add_new_chart() {
         $('#graph-type').on('submit', function (e) {
             e.preventDefault();
             var data = $('#graph-type').serializeArray();
-            console.log(data);
 
             $.ajax({
                 url: $(this).attr('action'),
                 method: 'post',
                 accept: 'json',
                 data: data,
-                success: function(response){
-                    // console.log(response);
-                }
+                success: function (response) {
+                    console.log(response);
+                    $("#new-chart").modal("hide");
+                    swal({
+                        type: 'success',
+                        text: response.message,
+                        title: "Device Updated",
+                        showCancelButton: false,
+                    });
+                },
+                error: (response) => {
+                    console.log(response);
+                    $("#new-chart").modal("hide");
+                    swal({
+                        type: 'error',
+                        text: response.message,
+                        title: "Chart Already Exists",
+                        showCancelButton: false
+                    });
+                },
             })
         });
 
-        add_new_y_axis();
-        delete_y_axis();
+
     }
 }
 
@@ -101,7 +116,7 @@ function add_new_y_axis() {
         e.preventDefault();
 
         let val = ($(this).siblings().val());
-        if(val.length > 0 ){
+        if (val.length > 0) {
 
             $(this).siblings().val(null);
             let new_elem = "<div class=\"input-group pt-2\" id='" + val + "'>\n" +
@@ -110,8 +125,8 @@ function add_new_y_axis() {
                 "</div>"
 
             $('.chart-y-axises').append(new_elem);
-        }else{
-            swal("ADD A NAME FOR THE TARGET");
+        } else {
+            swal("success", "ADD A NAME FOR THE TARGET");
         }
     })
 

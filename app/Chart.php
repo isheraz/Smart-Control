@@ -11,4 +11,8 @@ class Chart extends Model
     public function smartHome(){
         return $this->belongsTo('App\SmartHome', 'device_id');
     }
+
+    public function chartValues(){
+        return $this->hasMany('App\ChartData', 'chart_id', 'id');
+    }
 }
