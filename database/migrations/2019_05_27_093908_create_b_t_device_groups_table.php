@@ -17,7 +17,7 @@ class CreateBTDeviceGroupsTable extends Migration
             $table->increments('id');
             $table->text('name')->nullable();
             $table->char('master_mac_address',17)->unique();
-            $table->json('devices');
+            $table->text('devices');
             $table->integer('allowed')->default(3);
             $table->timestamps();
         });

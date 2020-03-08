@@ -26,4 +26,8 @@ class SmartHome extends Model {
 	public function device_metas(){
 		return $this->hasMany('App\SmartHomeMeta');
 	}
+
+	public function chart(){
+		return $this->hasOne('App\Chart', 'device_id');
+	}
 }

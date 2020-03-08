@@ -35,7 +35,7 @@ $(document).ready(function () {
             dataType: "json",
             async: true,
             method: 'POST',
-            data: {node: node},
+            data: { node: node },
             success: function (response) {
                 Swal({
                     type: 'success',
@@ -46,6 +46,9 @@ $(document).ready(function () {
             }
         });
     });
+
+    /*Add New Chart*/
+    add_new_chart();
 });
 
 function update_state(node) {
@@ -56,7 +59,7 @@ function update_state(node) {
         dataType: "json",
         async: true,
         method: 'POST',
-        data: {node: node},
+        data: { node: node },
         success: function (response) {
             Swal({
                 type: 'success',
@@ -66,6 +69,104 @@ function update_state(node) {
             });
         }
     });
+}
+
+function add_new_chart() {
+    if ($('#graph-type').length > 0) {
+
+
+        $('#graph-type').on('submit', function (e) {
+            e.preventDefault();
+            var data = $('#graph-type').serializeArray();
+
+            $.ajax({
+                url: $(this).attr('action'),
+                method: 'post',
+                accept: 'json',
+                data: data,
+                success: function (response) {
+                    console.log(response);
+                    $("#new-chart").modal("hide");
+                    swal({
+                        type: 'success',
+                        text: response.message,
+                        title: "Device Updated",
+                        showCancelButton: false,
+                    });
+                },
+                error: (response) => {
+                    console.log(response);
+                    $("#new-chart").modal("hide");
+                    swal({
+                        type: 'error',
+                        text: response.message,
+                        title: "Chart Already Exists",
+                        showCancelButton: false
+                    });
+                },
+            })
+        });
+
+
+    }
+}
+
+function add_new_y_axis() {
+    $('.btn_chart_y').on('click', function (e) {
+        e.preventDefault();
+
+        let val = ($(this).siblings().val());
+        if (val.length > 0) {
+
+            $(this).siblings().val(null);
+            let new_elem = "<div class=\"input-group pt-2\" id='" + val + "'>\n" +
+                "<input type=\"text\" value='" + val + "' class=\"form-control disabled\" disabled name=\"chart_y_labels[]\">\n" +
+                "<button class=\"btn btn-outline-danger btn_chart_y_del\"><i class=\"fa fa-trash\"></i></button>\n" +
+                "</div>"
+
+            $('.chart-y-axises').append(new_elem);
+        } else {
+            swal("success", "ADD A NAME FOR THE TARGET");
+        }
+    })
+
+}
+
+function delete_y_axis() {
+    $('.btn_chart_y_del').on('click', function (e) {
+        e.preventDefault();
+        $(this).parent().remove();
+    })
+}
+
+function display_chart() {
+    var MONTHS = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+    ];
+
+    var COLORS = [
+        '#4dc9f6',
+        '#f67019',
+        '#f53794',
+        '#537bc4',
+        '#acc236',
+        '#166a8f',
+        '#00a950',
+        '#58595b',
+        '#8549ba'
+    ];
+
 }
 
 function disabled() {

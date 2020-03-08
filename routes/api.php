@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChartController;
 use Illuminate\Http\Request;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Http\Request;
 */
 
 Route::group( [ 'middleware' => [ 'api' ] ], function () {
-	
+
 //	Route::post ( '/register', 'HomeController@registration' );
 	Route::post ( '/login', 'HomeController@authenticate' );
 	
@@ -32,5 +33,9 @@ Route::group( [ 'middleware' => [ 'api' ] ], function () {
 	Route::get( 'devices/{user_id}', 'SmartHomeController@devices' );
 	// Add Data to Bluetooth Group
     Route::post('bluetooth/add', 'BluetoothDeviceController@store');
-    Route::post('bluetooth/group', 'BluetoothDeviceController@master');
+	Route::post('bluetooth/group', 'BluetoothDeviceController@master');
+
+
+	Route::post('chart/update/{device}', 'ChartController@update');
+	Route::post('chart/values/{device}', 'ChartController@showX');
 } );
