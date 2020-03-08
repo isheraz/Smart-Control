@@ -16,6 +16,7 @@ class CreateChartDatasTable extends Migration
         Schema::create('chart_datas', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('chart_id');
+            $table->string('chart_label');
             $table->string('x');
             $table->string('y');
             $table->timestamps();

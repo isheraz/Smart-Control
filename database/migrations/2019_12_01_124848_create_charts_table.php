@@ -17,8 +17,8 @@ class CreateChartsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('type');
-            $table->json('x_axis');
-            $table->json('y_axis');
+            $table->string('x_axis');
+            $table->string('y_axis');
             $table->unsignedBigInteger('device_id');
             $table->timestamps();
 			$table->foreign( 'device_id' )->references( 'id' )->on( 'smart_homes' );
