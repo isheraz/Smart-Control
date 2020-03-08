@@ -44,7 +44,7 @@
                 <ul class="navbar-nav mr-auto">
                     @auth
                     <li><a class="nav-link" href="{{ route('home') }}">{{ __('Dashboard') }}</a></li>
-                    <li><a class="nav-link" href="{{ route('bt-group-list') }}">{{ __('Bluetooth Groups') }}</a></li>
+                    {{-- <li><a class="nav-link" href="{{ route('bt-group-list') }}">{{ __('Bluetooth Groups') }}</a></li> --}}
                         @endauth
                 </ul>
 

@@ -14,9 +14,9 @@
 
 Route::get( '/', function () {
 	return view( 'welcome' );
-} );
+} )->middleware('verified');
 
-Auth::routes(/*['register' => false]*/);
+Auth::routes(['verify' => true]);
 
 $this->put( 'password/email', 'Auth\ForgotPasswordController@showQuestion' )->name( 'password.question' );
 $this->post( 'password/email', 'Auth\ForgotPasswordController@validateQuestion' )->name( 'password.email' );
@@ -24,7 +24,7 @@ $this->post( 'password/email', 'Auth\ForgotPasswordController@validateQuestion' 
 Route::get( '/test', 'SmartHomeController@test' );
 
 
-Route::get( '/home', 'SmartHomeController@index' )->name( 'home' );
+Route::get( '/home', 'SmartHomeController@index' )->middleware('verified')->name( 'home' );
 
 Route::get( '/disconnect', 'SmartHomeController@disconnect' );
 //Device Routes
