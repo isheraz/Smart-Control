@@ -1,0 +1,5 @@
+deployment:
+  tasks:
+   - composer install
+   - php artisan iseed users
+   - php artisan migrate:fresh --seed
