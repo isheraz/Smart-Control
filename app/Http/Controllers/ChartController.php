@@ -72,6 +72,7 @@ class ChartController extends Controller
         $res = ChartData::insert([
             'x' => new DateTime(now()),
             'y' => $request->y,
+            'chart_label'=>$request->chart_label,
             'chart_id' => $chart->id
         ]);
 

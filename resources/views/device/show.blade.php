@@ -196,6 +196,25 @@
                         </form>
                     </div>
 
+                    <div class="row">
+                        <section class="col-8 m-auto">
+                            <table class="table table-bordered table-stripped">
+                                <thead>
+                                    <tr>
+                                        <th>CHART</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>{{ /* $device->chart->first()->chartValues or */ $device->chart ? $device->chart->title : 'no chart exists' }}</td>
+                                    </tr>
+                                </tbody>
+                                
+                            </table>
+
+                        </section>
+                    </div>
+
                     <footer class="card-footer">
                         <small>
                             @if($device->connection)
