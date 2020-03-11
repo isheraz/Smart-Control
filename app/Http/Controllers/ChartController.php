@@ -67,12 +67,12 @@ class ChartController extends Controller
     public function update(Request $request, $device)
     {
         $device = SmartHome::where('serial', $device)->first();
-        $chart = $device->chart()->with('chartValues')->first();
+        $chart = $device->chart->with('chartValues')->first();
 
         $res = ChartData::insert([
             'x' => new DateTime(now()),
             'y' => $request->y,
-            'chart_label'=>$request->chart_label,
+            'label'=>$request->chart_label,
             'chart_id' => $chart->id
         ]);
 
