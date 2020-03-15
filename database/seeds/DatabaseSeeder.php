@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder {
 		$this->call( SmartHomesTableSeeder::class );
 	    $this->call(SmartHomeMetasTableSeeder::class);
         $this->call(UsersTableSeeder::class);
-        $this->call(BluetoothDevicesTableSeeder::class);
+        // $this->call(BluetoothDevicesTableSeeder::class);
     }
 }

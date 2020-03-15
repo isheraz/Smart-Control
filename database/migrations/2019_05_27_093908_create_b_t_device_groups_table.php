@@ -13,14 +13,14 @@ class CreateBTDeviceGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('b_t_device_groups', function (Blueprint $table) {
+        /*Schema::create('b_t_device_groups', function (Blueprint $table) {
             $table->increments('id');
             $table->text('name')->nullable();
             $table->char('master_mac_address',17)->unique();
             $table->text('devices');
             $table->integer('allowed');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
@@ -30,6 +30,6 @@ class CreateBTDeviceGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('b_t_device_groups');
+        //Schema::dropIfExists('b_t_device_groups');
     }
 }

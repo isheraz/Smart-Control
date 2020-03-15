@@ -37,5 +37,5 @@ Route::group( [ 'middleware' => [ 'api' ] ], function () {
 
 
 	Route::post('chart/update/{device}', 'ChartController@update');
-	Route::post('chart/values/{device}', 'ChartController@showX');
+	Route::get('chart/values/{device}', 'ChartController@showX');
 } );
