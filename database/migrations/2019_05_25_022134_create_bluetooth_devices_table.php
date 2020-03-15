@@ -13,14 +13,14 @@ class CreateBluetoothDevicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('bluetooth_devices', function (Blueprint $table) {
+        /*Schema::create('bluetooth_devices', function (Blueprint $table) {
             $table->increments('id');
             $table->text('name')->nullable();
             $table->text('mac_address');
             $table->enum('mode',['M','S']);
             $table->text('uuid');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
@@ -30,7 +30,7 @@ class CreateBluetoothDevicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bluetooth_devices');
-        Schema::dropIfExists('bluetooth_device_group');
+        /*Schema::dropIfExists('bluetooth_devices');
+        Schema::dropIfExists('bluetooth_device_group');*/
     }
 }

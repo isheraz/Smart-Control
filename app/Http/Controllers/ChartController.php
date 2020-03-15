@@ -52,8 +52,9 @@ class ChartController extends Controller
      */
     public function showX($device)
     {
-        $device = SmartHome::where('serial', $device)->first();
+        $device = SmartHome::where('serial', $device)->get()->first();
         $chart = $device->chart()->with('chartValues')->first();
+        // dd(ChartData::all());
         return response()->json($chart);
     }
 
@@ -67,12 +68,12 @@ class ChartController extends Controller
     public function update(Request $request, $device)
     {
         $device = SmartHome::where('serial', $device)->first();
+        // dd($device);
         $chart = $device->chart->with('chartValues')->first();
-
         $res = ChartData::insert([
             'x' => new DateTime(now()),
             'y' => $request->y,
-            'label'=>$request->chart_label,
+            'chart_label'=>$request->label,
             'chart_id' => $chart->id
         ]);
 
