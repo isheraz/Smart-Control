@@ -38,4 +38,6 @@ Route::group( [ 'middleware' => [ 'api' ] ], function () {
 
 	Route::post('chart/update/{device}', 'ChartController@update');
 	Route::get('chart/values/{device}', 'ChartController@showX');
-} );
+	Route::get('chart/values/{device}/{label}', 'ChartController@showLabelX');
+	Route::get('chart/labels/{device}', 'ChartController@getAllLabels');
+});

@@ -58,6 +58,25 @@ class ChartController extends Controller
         return response()->json($chart);
     }
 
+    public function showLabelX($device, $label)
+    {
+        $device = SmartHome::where('serial', $device)->get()->first();
+        $chart = $device->chart()->with(['chartValues' => function ($q) use ($label) {
+            $q->where('chart_label','LIKE', "%$label%");
+        }])->get();
+        return response()->json($chart);
+    }
+
+    public function getAllLabels($device)
+    {
+        $device = SmartHome::where('serial', $device)->get()->first();
+        $chart = $device->chart()->with(['chartValues' => function ($q) {
+           
+        }])->get()->first()->chartValues->groupBy('chart_label');
+        // dd($chart->first()->chartValues->unique('chart_label'));
+        return response()->json($chart);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -73,7 +92,7 @@ class ChartController extends Controller
         $res = ChartData::insert([
             'x' => new DateTime(now()),
             'y' => $request->y,
-            'chart_label'=>$request->label,
+            'chart_label' => $request->label,
             'chart_id' => $chart->id
         ]);
 
