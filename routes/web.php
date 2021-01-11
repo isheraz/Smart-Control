@@ -76,3 +76,15 @@ Route::prefix('graphs')->group(function(){
    Route::post('/{device}', 'ChartController@store')->name('store-graph');
 
 });
+Route::post('update_label', 'LabelController@update_label')->name('update_label');
+   Route::post('store_label', 'LabelController@store_label')->name('store_label');
+  Route::get('/label_delete/{label_id}','LabelController@label_delete');
+ Route::post('update_manual_alert','LabelController@update_manual_alert')->name('update_manual_alert');
+ 
+ Route::post('update_streaming', 'LabelController@update_streaming')->name('update_streaming');
+ Route::post('store_streaming', 'LabelController@store_streaming')->name('store_streaming');
+ Route::get('/streaming_delete/{label_id}','LabelController@streaming_delete');
+ Route::post('view_history', 'LabelController@view_history')->name('view_history');
+ Route::get('/clear_history/{history_id}','LabelController@clear_history');
+  Route::post('update_limit','LabelController@update_limit')->name('update_limit');
+ 

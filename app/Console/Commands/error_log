@@ -1,0 +1,2 @@
+[17-Mar-2020 04:46:12 America/New_York] PHP Fatal error:  Class 'Illuminate\Console\Command' not found in /home/ishebgxd/public_html/smart-control/app/Console/Commands/Devices.php on line 9
+[23-Mar-2020 18:16:07 America/New_York] PHP Fatal error:  Class 'Illuminate\Console\Command' not found in /home/ishebgxd/public_html/smart-control/app/Console/Commands/Devices.php on line 9

@@ -1,0 +1,4 @@
+[15-Mar-2020 02:21:02 America/New_York] PHP Fatal error:  Class 'Illuminate\Foundation\Testing\TestCase' not found in /home/ishebgxd/public_html/smart-control/tests/TestCase.php on line 7
+[22-Mar-2020 16:04:50 America/New_York] PHP Fatal error:  Class 'Illuminate\Foundation\Testing\TestCase' not found in /home/ishebgxd/public_html/smart-control/tests/TestCase.php on line 7
+[23-Mar-2020 05:03:32 America/New_York] PHP Fatal error:  Class 'Illuminate\Foundation\Testing\TestCase' not found in /home/ishebgxd/public_html/smart-control/tests/TestCase.php on line 7
+[06-Apr-2020 20:01:59 America/New_York] PHP Fatal error:  Class 'Illuminate\Foundation\Testing\TestCase' not found in /home/ishebgxd/public_html/smart-control/tests/TestCase.php on line 7

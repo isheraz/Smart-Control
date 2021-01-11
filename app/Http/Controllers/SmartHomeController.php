@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Karriere\JsonDecoder\JsonDecoder;
+use Illuminate\Support\Facades\DB;
 use Mockery\Exception;
 
 class SmartHomeController extends Controller {
@@ -97,7 +98,9 @@ class SmartHomeController extends Controller {
 	public function show( SmartHome $device ) {
 		
 		if($device->user_id == Auth::user()->id){
-			return view( 'device.show', compact( 'device' ) );
+		    $labels = DB::table('labels')->where('device_id',$device->id)->get();
+			$streaming = DB::table('streamings')->where('device_id',$device->id)->get();
+			return view( 'device.show', compact( 'device','labels','streaming' ) );
 		}return redirect()->back()->with([
 			'status'=>1,
 			'alert-type'=>'danger',
@@ -169,6 +172,7 @@ class SmartHomeController extends Controller {
 		$nodes['device_metas'] = $device->device_metas;
 		$nodes['nodes'] = $device->nodes;
 		$device['user_name'] = $device->user->name;
+		unset($device['user']);
 		return $device;
 	}
 	
@@ -300,7 +304,7 @@ class SmartHomeController extends Controller {
 		$node->save();
 		
 		
-		return [ "message" => "$node->name Updated" ];
+	//	return [ "message" => "$node->name Updated" ];
 	}
 	
 	public function delete(SmartHome $device){

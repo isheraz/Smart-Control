@@ -1,0 +1,8 @@
+[17-Mar-2020 04:47:01 America/New_York] PHP Fatal error:  Class 'Illuminate\Cookie\Middleware\EncryptCookies' not found in /home/ishebgxd/public_html/smart-control/app/Http/Middleware/EncryptCookies.php on line 7
+[17-Mar-2020 04:47:04 America/New_York] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Middleware\TrimStrings' not found in /home/ishebgxd/public_html/smart-control/app/Http/Middleware/TrimStrings.php on line 7
+[17-Mar-2020 04:47:06 America/New_York] PHP Fatal error:  Class 'Fideloper\Proxy\TrustProxies' not found in /home/ishebgxd/public_html/smart-control/app/Http/Middleware/TrustProxies.php on line 8
+[17-Mar-2020 04:47:08 America/New_York] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken' not found in /home/ishebgxd/public_html/smart-control/app/Http/Middleware/VerifyCsrfToken.php on line 7
+[23-Mar-2020 18:17:34 America/New_York] PHP Fatal error:  Class 'Illuminate\Cookie\Middleware\EncryptCookies' not found in /home/ishebgxd/public_html/smart-control/app/Http/Middleware/EncryptCookies.php on line 7
+[23-Mar-2020 18:17:41 America/New_York] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Middleware\TrimStrings' not found in /home/ishebgxd/public_html/smart-control/app/Http/Middleware/TrimStrings.php on line 7
+[23-Mar-2020 18:17:44 America/New_York] PHP Fatal error:  Class 'Fideloper\Proxy\TrustProxies' not found in /home/ishebgxd/public_html/smart-control/app/Http/Middleware/TrustProxies.php on line 8
+[23-Mar-2020 18:17:47 America/New_York] PHP Fatal error:  Class 'Illuminate\Foundation\Http\Middleware\VerifyCsrfToken' not found in /home/ishebgxd/public_html/smart-control/app/Http/Middleware/VerifyCsrfToken.php on line 7

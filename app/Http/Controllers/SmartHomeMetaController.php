@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\SmartHome;
 use App\SmartHomeMeta;
+use App\HistoryMain;
+use App\HistoryChild;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 class SmartHomeMetaController extends Controller {
 	
@@ -117,9 +120,34 @@ class SmartHomeMetaController extends Controller {
 					$meta->value = $requested['value'];
 					$meta->save();
 					$flag = true;
+					
+				 $history = DB::table('history_mains')
+		 			->where('history_id',$meta->id)
+					->where('history_type','attributes')
+					->first();
+		 if($history)
+		 {
+		 $history_id=$history->id;
+		 }
+		 else
+		 {
+		 $stask = new HistoryMain;
+            $stask->history_id = $meta->id;
+			$stask->history_type = 'attributes';
+            $stask->history_text = $requested['key'];
+            $stask->save();	
+		$history_id = $stask->id;
+		 }
+		 $stask = new HistoryChild;
+            $stask->history_id = $history_id;
+			$stask->history_value = $requested['value'];
+         $stask->save();	
 				}
 			}
 		}
+		
+		
+		
 		if($flag){
 			return response()->json([
 				"success"=>true,
@@ -141,7 +169,7 @@ class SmartHomeMetaController extends Controller {
 	 */
 	public function destroy( SmartHomeMeta $smartHomeMeta ) {
 		$smartHomeMeta->delete();
-		
+		$deleted = DB::delete('delete from history_mains where history_type="Attribute" AND history_id="'.$smartHomeMeta->id.'"');
 		return redirect()->back()->with( [
 			'status'     => true,
 			'alert-type' => 'danger',

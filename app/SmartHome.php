@@ -28,6 +28,6 @@ class SmartHome extends Model {
 	}
 
 	public function chart(){
-		return $this->hasOne('App\Chart', 'device_id');
+		return $this->hasMany('App\Chart', 'device_id');
 	}
 }

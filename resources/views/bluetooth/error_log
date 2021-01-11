@@ -1,0 +1,8 @@
+[17-Mar-2020 04:49:37 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\BluetoothDevice' not found in /home/ishebgxd/public_html/smart-control/resources/views/bluetooth/index.blade.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/resources/views/bluetooth/index.blade.php on line 26
+[23-Mar-2020 18:21:23 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\BluetoothDevice' not found in /home/ishebgxd/public_html/smart-control/resources/views/bluetooth/index.blade.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/resources/views/bluetooth/index.blade.php on line 26

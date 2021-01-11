@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\UserApp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller {
 	protected function validator( array $data ) {
@@ -47,6 +49,11 @@ class HomeController extends Controller {
 		
 		if ( ! empty( $user ) && $hashCheck == true ) {
 			
+			$stask = new UserApp;	
+            $stask->user_id = $user->id;
+            $stask->app_id =  isset($request->app_id) ?$request->app_id : 0 ;
+            $stask->save();
+            
 			return response()->json(
 				[
 					"login"   => true,
@@ -62,5 +69,10 @@ class HomeController extends Controller {
 			);
 		}
 		
+	}
+	public function logout( Request $request ) {
+	
+	$deleted = DB::delete('delete from user_apps where user_id="'.$request->user_id.'" and app_id="'.$request->app_id.'"');
+	return response()->json(["status" => "logout"]);
 	}
 }

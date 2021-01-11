@@ -1,0 +1,65 @@
+[15-Mar-2020 11:41:39 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php on line 5
+[15-Mar-2020 11:41:39 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php on line 5
+[15-Mar-2020 11:41:42 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php on line 5
+[15-Mar-2020 11:41:42 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php on line 5
+[15-Mar-2020 11:41:45 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php on line 16
+[15-Mar-2020 11:41:45 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php on line 16
+[22-Mar-2020 16:23:57 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php on line 5
+[22-Mar-2020 16:23:57 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php on line 5
+[22-Mar-2020 16:24:06 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php on line 5
+[22-Mar-2020 16:24:06 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php on line 5
+[22-Mar-2020 16:24:09 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php on line 16
+[22-Mar-2020 16:24:09 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php on line 16
+[23-Mar-2020 10:22:54 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php on line 5
+[23-Mar-2020 10:22:54 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php on line 5
+[23-Mar-2020 10:22:56 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php on line 5
+[23-Mar-2020 10:22:56 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php on line 5
+[23-Mar-2020 10:22:58 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php on line 16
+[23-Mar-2020 10:22:58 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php on line 16
+[05-Apr-2020 13:30:36 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php on line 16
+[05-Apr-2020 13:30:36 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php on line 16
+[05-Apr-2020 23:27:48 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php on line 5
+[05-Apr-2020 23:27:48 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/DeviceMetaFactory.php on line 5
+[08-Apr-2020 07:22:40 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php on line 5
+[08-Apr-2020 07:22:40 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/SmartHomeMetaFactory.php on line 5
+[09-Apr-2020 08:26:23 America/New_York] PHP Notice:  Undefined variable: factory in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php on line 16
+[09-Apr-2020 08:26:23 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/database/factories/UserFactory.php on line 16

@@ -1,0 +1,72 @@
+[15-Mar-2020 02:19:22 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/ishebgxd/public_html/smart-control/routes/api.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/api.php on line 17
+[15-Mar-2020 02:19:28 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Broadcast' not found in /home/ishebgxd/public_html/smart-control/routes/channels.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/channels.php on line 14
+[15-Mar-2020 02:19:33 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Artisan' not found in /home/ishebgxd/public_html/smart-control/routes/console.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/console.php on line 16
+[15-Mar-2020 02:19:39 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/ishebgxd/public_html/smart-control/routes/web.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/web.php on line 15
+[22-Mar-2020 16:04:17 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/ishebgxd/public_html/smart-control/routes/api.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/api.php on line 17
+[22-Mar-2020 16:04:19 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Broadcast' not found in /home/ishebgxd/public_html/smart-control/routes/channels.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/channels.php on line 14
+[22-Mar-2020 16:04:21 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Artisan' not found in /home/ishebgxd/public_html/smart-control/routes/console.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/console.php on line 16
+[22-Mar-2020 16:04:23 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/ishebgxd/public_html/smart-control/routes/web.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/web.php on line 15
+[23-Mar-2020 05:01:23 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/ishebgxd/public_html/smart-control/routes/api.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/api.php on line 17
+[23-Mar-2020 05:01:28 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Broadcast' not found in /home/ishebgxd/public_html/smart-control/routes/channels.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/channels.php on line 14
+[23-Mar-2020 05:01:33 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Artisan' not found in /home/ishebgxd/public_html/smart-control/routes/console.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/console.php on line 16
+[23-Mar-2020 05:01:38 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/ishebgxd/public_html/smart-control/routes/web.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/web.php on line 15
+[23-Mar-2020 06:57:48 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/ishebgxd/public_html/smart-control/routes/web.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/web.php on line 15
+[23-Mar-2020 08:16:59 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/ishebgxd/public_html/smart-control/routes/api.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/api.php on line 17
+[07-Apr-2020 00:56:36 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/ishebgxd/public_html/smart-control/routes/api.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/api.php on line 17
+[07-Apr-2020 02:43:30 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/ishebgxd/public_html/smart-control/routes/web.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/web.php on line 15
+[08-Apr-2020 00:40:34 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Artisan' not found in /home/ishebgxd/public_html/smart-control/routes/console.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/console.php on line 16
+[08-Apr-2020 20:40:33 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Broadcast' not found in /home/ishebgxd/public_html/smart-control/routes/channels.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/ishebgxd/public_html/smart-control/routes/channels.php on line 14

@@ -9,17 +9,17 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link href="{{ asset('images/favicon.png') }}" rel="shortcut icon">
+    <link href="{{ asset('public/images/favicon.png') }}" rel="shortcut icon">
 
 
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet">
-    <link href="{{ asset('css/sweetalert2.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/sweetalert2.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/styles.css') }}" rel="stylesheet">
 
     <script type="text/javascript">
         var APP_URL = '{!! json_encode(url('/')) !!}';
@@ -88,10 +88,10 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('public/js/app.js') }}"></script>
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<script src="{{ asset('js/sweetalert2.js') }}"></script>
+<script src="{{ asset('public/js/sweetalert2.js') }}"></script>
 
-<script src="{{ asset('js/scripts.js') }}"></script>
+<script src="{{ asset('public/js/scripts.js') }}"></script>
 </body>
 </html>

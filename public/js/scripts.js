@@ -11,8 +11,10 @@ $(document).ready(function () {
     /* change state of a single node inside a device*/
     $('.node-state').on('change', function () {
         var node;
+		
         node = this.id;
         update_state(node);
+		
     });
 
     /* Update Node */
